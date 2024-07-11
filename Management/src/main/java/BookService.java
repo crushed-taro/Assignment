@@ -38,7 +38,7 @@ public class BookService {
     }
 
     public void modify() {
-        System.out.println("[BookService] modify 메소드 종료됨...");
+        System.out.println("[BookService] modify 메소드 실행됨...");
         Scanner sc = new Scanner(System.in);
 
         BookRepository bookRepository = new BookRepository();
@@ -52,6 +52,18 @@ public class BookService {
     }
 
     public void delete() {
+        System.out.println("[BookService] delete 메소드 실행됨...");
+        Scanner sc = new Scanner(System.in);
+        BookRepository bookRepository = new BookRepository();
+        System.out.println("삭제하려는 책의 이름을 입력하세요.");
+        System.out.print(" >> ");
+        String name = sc.nextLine();
+
+        bookRepository.listDelete(name);
+
+        System.out.println("[BookService] delete 메소드 종료됨...");
 
     }
+
+
 }

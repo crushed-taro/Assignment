@@ -25,7 +25,7 @@ public class BookRepository {
     }
 
     public void listModify(String name) {
-        System.out.println("[BookRepository] listSearch 메소드 종료됨...");
+        System.out.println("[BookRepository] listModify 메소드 실행됨...");
         Scanner sc = new Scanner(System.in);
         int no;
         for(BookDTO bookDTO : bookDTOList) {
@@ -65,6 +65,18 @@ public class BookRepository {
                 }
             }
         }
-        System.out.println("[BookRepository] listSearch 메소드 종료됨...");
+        System.out.println("[BookRepository] listModify 메소드 종료됨...");
+    }
+
+    public void listDelete(String name) {
+        System.out.println("[BookRepository] listDelete 메소드 실행됨...");
+        for(BookDTO bookDTO : bookDTOList) {
+            if (bookDTO.getName().equals(name)) {
+                System.out.println("[Info] " + name + "을 찾았습니다.");
+                bookDTOList.remove(bookDTO);
+                System.out.println("[Info] " + name + "을 지웠습니다.");
+            }
+        }
+        System.out.println("[BookRepository] listDelete 메소드 종료됨...");
     }
 }
