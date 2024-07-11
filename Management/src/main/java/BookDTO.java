@@ -1,9 +1,9 @@
 public class BookDTO {
 
-    String name;
-    String author;
-    String publisher;
-    int price;
+    private String name;
+    private String author;
+    private String publisher;
+    private int price;
 
     public BookDTO() {}
 

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BookRepository {
 
-    private List<BookDTO> bookDTOList = new ArrayList<>();
+    List<BookDTO> bookDTOList = new ArrayList<>();
 
     public void listRegit(BookDTO bookDTO) {
         System.out.println("[BookRepository] listRedit 메소드 실행됨...");
@@ -37,6 +37,8 @@ public class BookRepository {
                 System.out.println("4. 책 가격 변경.");
                 System.out.print(" >>> ");
                 no = sc.nextInt();
+
+                sc.nextLine(); // 지우기
 
                 switch(no){
                     case 1 :
