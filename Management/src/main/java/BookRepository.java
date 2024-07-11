@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class BookRepository {
 
@@ -25,9 +26,43 @@ public class BookRepository {
 
     public void listModify(String name) {
         System.out.println("[BookRepository] listSearch 메소드 종료됨...");
+        Scanner sc = new Scanner(System.in);
+        int no;
         for(BookDTO bookDTO : bookDTOList) {
             if(bookDTO.getName().equals(name)) {
                 System.out.println("'" + name + "' 책을 찾았습니다."); // TODO
+                System.out.println("1. 책 제목 변경.");
+                System.out.println("2. 책 저자 변경.");
+                System.out.println("3. 책 출판사 변경.");
+                System.out.println("4. 책 가격 변경.");
+                System.out.print(" >>> ");
+                no = sc.nextInt();
+
+                switch(no){
+                    case 1 :
+                        System.out.println("책 제목을 변경합니다.");
+                        System.out.print(" >>>> ");
+                        bookDTO.setName(sc.nextLine());
+                        break;
+                    case 2 :
+                        System.out.println("책 저자를 변경합니다.");
+                        System.out.print(" >>>> ");
+                        bookDTO.setAuthor(sc.nextLine());
+                        break;
+                    case 3 :
+                        System.out.println("책 출판사를 변경합니다.");
+                        System.out.print(" >>>> ");
+                        bookDTO.setPublisher(sc.nextLine());
+                        break;
+                    case 4 :
+                        System.out.println("책 가격을 변경합니다.");
+                        System.out.print(" >>>> ");
+                        bookDTO.setPrice(sc.nextInt());
+                        break;
+                    default:
+                        System.out.println("[Caution] 잘못된 값을 입력하였습니다.");
+                        return;
+                }
             }
         }
         System.out.println("[BookRepository] listSearch 메소드 종료됨...");
